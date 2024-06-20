@@ -1,0 +1,62 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "PDF Upload API",
+      "description": "API for uploading PDF files",
+      "version": "1.0.0"
+    },
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/upload": {
+        "post": {
+          "summary": "Upload a PDF file",
+          "consumes": [
+            "multipart/form-data"
+          ],
+          "parameters": [
+            {
+              "name": "file",
+              "in": "formData",
+              "type": "file",
+              "required": true,
+              "description": "The PDF file to upload"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "File uploaded successfully"
+            },
+            "400": {
+              "description": "Error in uploading file"
+            }
+          }
+        }
+      },
+      "/uploads/{filename}": {
+        "get": {
+          "summary": "Retrieve an uploaded file",
+          "parameters": [
+            {
+              "name": "filename",
+              "in": "path",
+              "type": "string",
+              "required": true,
+              "description": "Name of the file to retrieve"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "File retrieved successfully"
+            },
+            "404": {
+              "description": "File not found"
+            }
+          }
+        }
+      }
+    }
+  }
+  
