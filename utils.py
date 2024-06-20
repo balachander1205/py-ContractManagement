@@ -2,7 +2,6 @@ import openai
 from PyPDF2 import PdfReader
 from pdfminer import high_level
 
-# Replace 'your-api-key' with your actual OpenAI API key
 openai.api_key = ''
 
 def supplier_agreement_llm_call(document_text):
