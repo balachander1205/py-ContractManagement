@@ -3,7 +3,7 @@ from PyPDF2 import PdfReader
 from pdfminer import high_level
 
 # Replace 'your-api-key' with your actual OpenAI API key
-openai.api_key = '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'
+openai.api_key = ''
 
 def supplier_agreement_llm_call(document_text):
     prompt = f"You are given a supplier legal document and extract the following fields and return as a JSON, if you are unable to find the corresponding value for a field return None for the field. Here is the document:\n\n{document_text}"
